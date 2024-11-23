@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url=Homepage.html">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
+    
+    <!-- Мгновенный редирект с помощью JavaScript -->
+    <script>
+        window.location.replace("Homepage.html");
+    </script>
+    
+    <!-- Метатег для перенаправления без JavaScript -->
+    <meta http-equiv="refresh" content="1;url=Homepage.html">
 </head>
 <body>
+    <!-- Сообщение для пользователей с отключённым JavaScript -->
     If you are not redirected automatically, follow this <a href="Homepage.html">link</a>.
 </body>
 </html>

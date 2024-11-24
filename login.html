@@ -86,6 +86,7 @@
 
         .form .code-group {
             display: flex;
+            flex-direction: column;
             gap: 10px;
             margin-bottom: 15px;
         }
@@ -94,9 +95,50 @@
             flex: 1;
         }
 
-        .form .code-group button {
-            flex: 0.5;
-            padding: 0 10px;
+        .form .code-group .inline-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .form .code-group .inline-buttons button {
+            flex: 1;
+        }
+
+        /* Стиль для значка вопроса и подсказки */
+        .form .code-group .help-icon {
+            position: relative;
+            cursor: pointer;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .form .code-group .help-icon::after {
+            content: '?';
+            font-weight: bold;
+        }
+
+        .form .code-group .help-icon:hover::after {
+            color: #007bff;
+        }
+
+        .form .code-group .tooltip {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            margin-top: 5px;
+            z-index: 1;
+        }
+
+        .form .code-group .help-icon:hover .tooltip {
+            display: block;
         }
     </style>
 </head>
@@ -123,7 +165,13 @@
             
             <div class="code-group">
                 <input type="text" placeholder="Код подтверждения" required>
-                <button type="button">Отправить</button>
+                <div class="inline-buttons">
+                    <button type="button">Отправить код</button>
+                    <button type="button">Подтвердить</button>
+                </div>
+                <div class="help-icon">
+                    <span class="tooltip">Перед регистрацией нужно подтвердить вашу электронную почту.</span>
+                </div>
             </div>
             
             <input type="password" placeholder="Пароль" required>

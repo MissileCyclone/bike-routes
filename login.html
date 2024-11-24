@@ -54,11 +54,11 @@
 
         .form input {
             width: 100%;
-            padding: 10px 15px; /* Отступы внутри поля */
+            padding: 10px 15px;
             margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            box-sizing: border-box; /* Учитываем padding в общей ширине */
+            box-sizing: border-box;
         }
 
         .form a {
@@ -77,10 +77,26 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            margin-bottom: 10px;
         }
 
         .form button:hover {
             background-color: #555;
+        }
+
+        .form .code-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .form .code-group input {
+            flex: 1;
+        }
+
+        .form .code-group button {
+            flex: 0.5;
+            padding: 0 10px;
         }
     </style>
 </head>
@@ -104,6 +120,12 @@
         <div id="register" class="form">
             <input type="text" placeholder="Имя пользователя" required>
             <input type="email" placeholder="Электронная почта" required>
+            
+            <div class="code-group">
+                <input type="text" placeholder="Код подтверждения" required>
+                <button type="button">Отправить</button>
+            </div>
+            
             <input type="password" placeholder="Пароль" required>
             <input type="password" placeholder="Подтвердите пароль" required>
             <button>Зарегистрироваться</button>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Веломаршруты</title>
     <style>
-        /* Основные стили */
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -99,15 +99,15 @@
             */
         }
 
-        // Пример работы с авторизацией
+        
         function checkUserAuth() {
             var user = getUser(); // Проверка, авторизован ли пользователь
 
             if (user) {
-                // Если пользователь авторизован, заменяем "Войти" на аватарку и никнейм
-                document.getElementById('login-link').style.display = 'none'; // Убираем ссылку "Войти"
                 
-                // Создаем элементы для аватара и ника
+                document.getElementById('login-link').style.display = 'none';
+                
+                
                 var authContainer = document.getElementById('auth');
                 
                 var avatar = document.createElement('img');
@@ -125,20 +125,20 @@
                 logoutButton.textContent = 'Выйти';
                 authContainer.appendChild(logoutButton);
 
-                // Добавляем событие для выхода
+                
                 logoutButton.addEventListener('click', function() {
                     alert('Вы вышли из аккаунта');
-                    location.reload(); // Перезагрузка страницы после выхода
+                    location.reload();
                 });
             }
         }
 
         function getUser() {
-            // Пример получения данных о пользователе (в будущем можно заменить на запрос к серверу или localStorage)
-            return null; // Возвращаем null, когда пользователь не авторизован
+            
+            return null;
         }
 
-        // Проверка авторизации при загрузке страницы
+        
         checkUserAuth();
     </script>
 </body>
